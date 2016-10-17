@@ -7,10 +7,24 @@ import {
 } from 'react-native';
 
 export default class Main extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      username: '',
+      isLoading: false,
+      error: false
+    }
+
+    handleChange()
+  }
+
   render() {
     return (
       <View style={styles.mainContainer}>
-        <Text>hello world</Text>
+        <TextInput
+          value = {this.state.username}
+          onchange={this.handleChange.bind(this)}
+        />
       </View>
     )
   }
